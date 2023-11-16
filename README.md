@@ -8,7 +8,7 @@ Enable minimal CPU frequency on all clusters that disabled by default
 Наличие root-прав на смартфоне (Magisk)
 
 **Инструкция**<br>
-Скопировать скрипт в папку /data/adb/service.d<br>
+Скопировать скрипт mi11_300MHz.sh в папку /data/adb/service.d<br>
 Установить права 0766 (rwxrw-rw-)<br>
 Перезагрузить телефон<br>
 
