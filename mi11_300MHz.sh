@@ -17,23 +17,39 @@ little_min=300000
 big_min=710400
 prime_min=844800
 
-#Set CPU freq
+little_max=1804800
+big_max=2419200
+prime_max=2841600
+
+#Set min CPU freq
 chmod 0744 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 chmod 0744 /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
 chmod 0744 /sys/devices/system/cpu/cpu7/cpufreq/scaling_min_freq
-
 echo $little_min > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 echo $big_min > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
 echo $prime_min > /sys/devices/system/cpu/cpu7/cpufreq/scaling_min_freq
-
 chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
 chmod 0664 /sys/devices/system/cpu/cpu7/cpufreq/scaling_min_freq
 
+#Set max CPU freq
+chmod 0744 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+chmod 0744 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+chmod 0744 /sys/devices/system/cpu/cpu7/cpufreq/scaling_max_freq
+echo $little_max > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+echo $big_max > /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+echo $prime_max > /sys/devices/system/cpu/cpu7/cpufreq/scaling_max_freq
+chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/scaling_max_freq
+chmod 0664 /sys/devices/system/cpu/cpu7/cpufreq/scaling_max_freq
+
 #msm_performance
 chmod 0744 /sys/module/msm_performance/parameters/cpu_min_freq
+chmod 0744 /sys/module/msm_performance/parameters/cpu_max_freq
 echo "0:$little_min 1:$little_min 2:$little_min 3:$little_min 4:$big_min 5:$big_min 6:$big_min 7:$prime_min" > /sys/module/msm_performance/parameters/cpu_min_freq
+echo "0:$little_max 1:$little_max 2:$little_max 3:$little_max 4:$big_max 5:$big_max 6:$big_max 7:$prime_max" > /sys/module/msm_performance/parameters/cpu_max_freq
 chmod 0444 /sys/module/msm_performance/parameters/cpu_min_freq
+chmod 0444 /sys/module/msm_performance/parameters/cpu_max_freq
 
 while true
 do
