@@ -6,7 +6,7 @@
 Наличие root-прав на смартфоне (Magisk)
 
 **Инструкция**<br>
-Скопировать скрипт mi11_300MHz.sh в папку /data/adb/service.d<br>
+Скопировать скрипт mi11_300MHz.sh (или xiaomi13_underclock.sh в зависимости от модели) в папку /data/adb/service.d<br>
 Установить права 0766 (rwxrw-rw-)<br>
 Перезагрузить телефон<br>
 
